@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Summit Enterprise Health | Secure Patient Portal & Healthcare Directory</title>
+    <meta name="description" content="Summit Enterprise Health provides world-class, secure, and compliance-driven healthcare across our multi-facility network.">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+
+    <!-- Utility Bar -->
+    <div class="utility-bar">
+        <div class="container">
+            <div class="utility-left">
+                <span class="emergency-alert"><i data-lucide="alert-circle"></i> Emergency: 112 or visit nearest ER</span>
+                <span class="facility-status"><i data-lucide="activity"></i> Network Status: Secure & Operational</span>
+            </div>
+            <div class="utility-right">
+                <select id="language-select" aria-label="Select Language">
+                    <option value="en">English (US)</option>
+                    <option value="hi">हिंदी (Hindi)</option>
+                    <option value="mr">मराठी (Marathi)</option>
+                </select>
+                <a href="#staff" class="utility-link">Staff Intranet <i data-lucide="lock"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Navigation -->
+    <header class="main-header">
+        <div class="container header-container">
+            <div class="logo">
+                <div class="logo-mark">
+                    <i data-lucide="shield-plus"></i>
+                </div>
+                <div class="logo-text">
+                    <h1>Summit Health</h1>
+                    <span>Enterprise Medical Network</span>
+                </div>
+            </div>
+
+            <nav class="primary-nav">
+                <a href="#facilities">Facilities</a>
+                <a href="#specialties">Specialties</a>
+                <a href="#doctors">Find a Doctor</a>
+                <a href="#research">Research & Trials</a>
+                <a href="#visitors">Visitors</a>
+            </nav>
+
+            <div class="header-actions">
+                <button class="btn btn-outline" onclick="openSecureModal()"><i data-lucide="calendar"></i> Secure Scheduling</button>
+                <button class="btn btn-primary"><i data-lucide="user"></i> Patient Portal</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-overlay"></div>
+        <div class="container hero-content">
+            <div class="hero-badge"><i data-lucide="award"></i> Ranked #1 in Clinical Excellence</div>
+            <h2 class="hero-title">Uncompromising Healthcare. <br>Absolute Data Security.</h2>
+            <p class="hero-subtitle">Access our multi-facility network of over 1,200 specialists. Your medical records are protected by military-grade encryption and strict zero-trust protocols.</p>
+            <div class="hero-buttons">
+                <button class="btn btn-primary btn-large" onclick="openSecureModal()">Schedule Appointment</button>
+                <button class="btn btn-secondary btn-large">Access Lab Results <i data-lucide="arrow-right"></i></button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quick Actions Architecture -->
+    <section class="quick-actions">
+        <div class="container grid-4">
+            <div class="action-card">
+                <div class="icon-wrapper"><i data-lucide="search"></i></div>
+                <h3>Find a Specialist</h3>
+                <p>Search our directory by name, specialty, or condition.</p>
+                <a href="#doctors">Search Directory &rarr;</a>
+            </div>
+            <div class="action-card">
+                <div class="icon-wrapper"><i data-lucide="map-pin"></i></div>
+                <h3>Our Facilities</h3>
+                <p>Locate hospitals, urgent care, and specialized clinics.</p>
+                <a href="#facilities">View Locations &rarr;</a>
+            </div>
+            <div class="action-card">
+                <div class="icon-wrapper"><i data-lucide="file-text"></i></div>
+                <h3>Medical Records</h3>
+                <p>Securely request or transfer your health records.</p>
+                <a href="#records">Access Records &rarr;</a>
+            </div>
+            <div class="action-card highlight-card">
+                <div class="icon-wrapper"><i data-lucide="phone-call"></i></div>
+                <h3>Telehealth</h3>
+                <p>24/7 access to board-certified physicians virtually.</p>
+                <a href="#telehealth">Start Visit &rarr;</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Facilities (New Section) -->
+    <section id="facilities" class="facilities-section section-padding bg-alt">
+        <div class="container">
+            <div class="section-header">
+                <h2>Our Premium Facilities</h2>
+                <p>Strategically located across Mumbai to provide immediate access to world-class medical infrastructure.</p>
+            </div>
+            <div class="grid-3">
+                <div class="facility-card">
+                    <img src="images/facility-bkc.jpg" alt="BKC Main Hospital">
+                    <div class="facility-content">
+                        <h3>Summit Main Hospital (BKC)</h3>
+                        <p><i data-lucide="map-pin"></i> Bandra Kurla Complex, Mumbai</p>
+                        <p class="fac-detail">24/7 Level-1 Trauma Center, 500+ Beds, Heliport.</p>
+                        <button class="btn btn-outline btn-block">Get Directions</button>
+                    </div>
+                </div>
+                <div class="facility-card">
+                    <img src="images/facility-andheri.jpg" alt="Andheri Outpatient">
+                    <div class="facility-content">
+                        <h3>Summit Specialist Clinic</h3>
+                        <p><i data-lucide="map-pin"></i> Andheri West, Mumbai</p>
+                        <p class="fac-detail">Outpatient Surgery, Advanced Radiology, Pediatrics.</p>
+                        <button class="btn btn-outline btn-block">Get Directions</button>
+                    </div>
+                </div>
+                <div class="facility-card">
+                    <img src="images/facility-powai.jpg" alt="Powai Oncology">
+                    <div class="facility-content">
+                        <h3>Powai Cancer Institute</h3>
+                        <p><i data-lucide="map-pin"></i> Hiranandani Gardens, Powai</p>
+                        <p class="fac-detail">Precision Oncology, Radiation Therapy, Palliative Care.</p>
+                        <button class="btn btn-outline btn-block">Get Directions</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Centers of Excellence -->
+    <section id="specialties" class="centers-of-excellence section-padding">
+        <div class="container">
+            <div class="section-header">
+                <h2>Centers of Excellence</h2>
+                <p>World-renowned specialized care facilities leading the nation in medical outcomes.</p>
+            </div>
+            <div class="grid-3">
+                <div class="coe-card">
+                    <img src="images/coe-cardio.jpg" alt="Cardiology Center">
+                    <div class="coe-content">
+                        <h3>Cardiovascular Institute</h3>
+                        <p>Pioneering minimally invasive heart surgeries and advanced electrophysiology.</p>
+                        <a href="#">Explore Cardiology &rarr;</a>
+                    </div>
+                </div>
+                <div class="coe-card">
+                    <img src="images/coe-neuro.jpg" alt="Neurology Center">
+                    <div class="coe-content">
+                        <h3>Neurological Center</h3>
+                        <p>Comprehensive care for brain and spine disorders, stroke, and Alzheimer's.</p>
+                        <a href="#">Explore Neurology &rarr;</a>
+                    </div>
+                </div>
+                <div class="coe-card">
+                    <img src="images/coe-oncology.jpg" alt="Oncology Center">
+                    <div class="coe-content">
+                        <h3>Comprehensive Cancer Center</h3>
+                        <p>Targeted immunotherapies, precision oncology, and unparalleled patient support.</p>
+                        <a href="#">Explore Oncology &rarr;</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Infrastructure Stats -->
+    <section class="stats-section">
+        <div class="container grid-4 text-center">
+            <div class="stat-item">
+                <span class="stat-number">12</span>
+                <span class="stat-label">Hospitals in Network</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number">1.2k+</span>
+                <span class="stat-label">Board-Certified Specialists</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number">AES-256</span>
+                <span class="stat-label">Encryption Standard</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number">100%</span>
+                <span class="stat-label">HIPAA/SOC2 Compliant</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Technology & Innovation -->
+    <section class="technology section-padding">
+        <div class="container tech-split">
+            <div class="tech-image">
+                <img src="images/technology.jpg" alt="Robotic Surgery">
+            </div>
+            <div class="tech-text">
+                <div class="badge-label">Innovation</div>
+                <h2>Next-Generation Medical Infrastructure</h2>
+                <p>Summit Health integrates state-of-the-art technology at every layer of patient care, from AI-assisted diagnostics to precision robotic surgeries.</p>
+                <ul class="tech-list">
+                    <li><i data-lucide="cpu"></i> <strong>Da Vinci Surgical Systems:</strong> Unmatched precision in complex surgeries, resulting in faster recovery times.</li>
+                    <li><i data-lucide="brain-circuit"></i> <strong>AI Diagnostics Lab:</strong> Machine learning algorithms to detect anomalies in radiology scans with 99.8% accuracy.</li>
+                    <li><i data-lucide="network"></i> <strong>Interoperable EMR:</strong> Instant, secure access to your medical history across our entire 12-facility network.</li>
+                </ul>
+                <button class="btn btn-outline">Read Innovation Report</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Doctors (New Section) -->
+    <section id="doctors" class="doctors-section section-padding bg-alt">
+        <div class="container">
+            <div class="section-header center">
+                <h2>Leading Specialists</h2>
+                <p>Our physicians are internationally recognized leaders in their respective fields.</p>
+            </div>
+            <div class="grid-4">
+                <div class="doctor-card">
+                    <img src="images/doctor-sharma.jpg" alt="Dr. Sharma">
+                    <div class="doctor-info">
+                        <h4>Dr. Vikram Sharma</h4>
+                        <span class="specialty">Chief of Cardiology</span>
+                        <p>FRCS, MD (AIIMS)</p>
+                        <button class="btn btn-outline btn-block" onclick="openSecureModal()">Book Appointment</button>
+                    </div>
+                </div>
+                <div class="doctor-card">
+                    <img src="images/doctor-patel.jpg" alt="Dr. Patel">
+                    <div class="doctor-info">
+                        <h4>Dr. Ananya Patel</h4>
+                        <span class="specialty">Neurosurgeon</span>
+                        <p>MS, MCh Neurosurgery</p>
+                        <button class="btn btn-outline btn-block" onclick="openSecureModal()">Book Appointment</button>
+                    </div>
+                </div>
+                <div class="doctor-card">
+                    <img src="images/doctor-rao.jpg" alt="Dr. Rao">
+                    <div class="doctor-info">
+                        <h4>Dr. Siddharth Rao</h4>
+                        <span class="specialty">Oncologist</span>
+                        <p>MD, DM Medical Oncology</p>
+                        <button class="btn btn-outline btn-block" onclick="openSecureModal()">Book Appointment</button>
+                    </div>
+                </div>
+                <div class="doctor-card">
+                    <img src="images/doctor-desai.jpg" alt="Dr. Desai">
+                    <div class="doctor-info">
+                        <h4>Dr. Neha Desai</h4>
+                        <span class="specialty">Orthopedic Surgeon</span>
+                        <p>MS Orthopedics</p>
+                        <button class="btn btn-outline btn-block" onclick="openSecureModal()">Book Appointment</button>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center" style="margin-top: 40px;">
+                <button class="btn btn-secondary btn-large">View All 1,200+ Specialists</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Clinical Trials & Research -->
+    <section id="research" class="research-trials section-padding">
+        <div class="container">
+            <div class="section-header center">
+                <h2>Clinical Trials & Research</h2>
+                <p>Advancing the boundaries of modern medicine. View our active trials currently seeking participants.</p>
+            </div>
+            <div class="table-responsive">
+                <table class="trials-table">
+                    <thead>
+                        <tr>
+                            <th>Trial ID</th>
+                            <th>Study Area</th>
+                            <th>Phase</th>
+                            <th>Status</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>NCT-2026A</td>
+                            <td>Targeted Therapy for Stage IV Melanoma</td>
+                            <td>Phase III</td>
+                            <td><span class="status-badge status-recruiting">Recruiting</span></td>
+                            <td><a href="#">Learn More</a></td>
+                        </tr>
+                        <tr>
+                            <td>NCT-2026B</td>
+                            <td>Non-Invasive Deep Brain Stimulation (Alzheimer's)</td>
+                            <td>Phase II</td>
+                            <td><span class="status-badge status-recruiting">Recruiting</span></td>
+                            <td><a href="#">Learn More</a></td>
+                        </tr>
+                        <tr>
+                            <td>NCT-2026C</td>
+                            <td>Next-Gen mRNA Vaccine for Respiratory Syncytial Virus</td>
+                            <td>Phase III</td>
+                            <td><span class="status-badge status-closed">Closed</span></td>
+                            <td><a href="#">View Results</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- Patient Success Stories -->
+    <section class="patient-stories section-padding bg-alt">
+        <div class="container">
+            <div class="section-header">
+                <h2>Patient Outcomes</h2>
+                <p>Real stories of recovery and resilience from the Summit Health community.</p>
+            </div>
+            <div class="grid-3">
+                <div class="story-card">
+                    <div class="story-stars"><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i></div>
+                    <blockquote>"The cardiac team at Summit Main saved my life. Their coordinated approach meant my surgery happened within hours, not days. Unbelievable care."</blockquote>
+                    <div class="story-author">
+                        <strong>Rahul M.</strong>
+                        <span>Coronary Bypass Patient</span>
+                    </div>
+                </div>
+                <div class="story-card">
+                    <div class="story-stars"><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i></div>
+                    <blockquote>"From my initial MRI to my final physical therapy session, my medical records followed me seamlessly across three different facilities. True peace of mind."</blockquote>
+                    <div class="story-author">
+                        <strong>Simran T.</strong>
+                        <span>Orthopedic Reconstruction</span>
+                    </div>
+                </div>
+                <div class="story-card">
+                    <div class="story-stars"><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i></div>
+                    <blockquote>"The Powai Oncology Center didn't just treat my illness; they supported my entire family through the hardest year of our lives. The staff is incredible."</blockquote>
+                    <div class="story-author">
+                        <strong>Amit L.</strong>
+                        <span>Cancer Survivor</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Frequently Asked Questions -->
+    <section id="visitors" class="faq-section section-padding">
+        <div class="container faq-container">
+            <div class="section-header center">
+                <h2>Visitor Information & FAQ</h2>
+                <p>Information on billing, insurance, and facility access.</p>
+            </div>
+            <div class="faq-list">
+                <div class="faq-item">
+                    <button class="faq-question">What insurance providers are accepted? <i data-lucide="chevron-down"></i></button>
+                    <div class="faq-answer">
+                        <p>We are in-network with all major national insurance carriers including HDFC ERGO, Star Health, ICICI Lombard, and government schemes like Ayushman Bharat. Please contact our billing department to verify your specific plan.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">Are my medical records shared across all Summit facilities? <i data-lucide="chevron-down"></i></button>
+                    <div class="faq-answer">
+                        <p>Yes. Summit Health utilizes a unified, highly secure Electronic Medical Record (EMR) system. Your clinical history, lab results, and imaging are instantly available to your authorized care team at any of our 12 locations in Mumbai.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">What are the standard visiting hours? <i data-lucide="chevron-down"></i></button>
+                    <div class="faq-answer">
+                        <p>General visiting hours are from 8:00 AM to 8:00 PM daily. However, ICU, NICU, and specialized wards have restricted access. Please check the specific facility page for detailed visitation policies.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">Is parking available at the BKC Main Hospital? <i data-lucide="chevron-down"></i></button>
+                    <div class="faq-answer">
+                        <p>Yes, we have a multi-level automated parking facility for over 800 vehicles at the BKC hospital, with valet services available at the main entrance.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">How do I access the Secure Patient Portal? <i data-lucide="chevron-down"></i></button>
+                    <div class="faq-answer">
+                        <p>You can log in via the 'Patient Portal' button in the top right corner. You must set up Multi-Factor Authentication (MFA) during your first visit to ensure the security of your health data.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Secure Scheduling Modal (Simulated) -->
+    <div id="secureModal" class="modal-overlay">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3><i data-lucide="lock"></i> Secure Appointment Gateway</h3>
+                <button class="close-btn" onclick="closeSecureModal()"><i data-lucide="x"></i></button>
+            </div>
+            <div class="modal-body">
+                <div class="security-notice">
+                    <i data-lucide="shield-check"></i>
+                    <p>This connection is encrypted via TLS 1.3. Your data is protected under strict medical privacy regulations.</p>
+                </div>
+                
+                <form id="appointmentForm" class="secure-form">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="patientName">Legal Name</label>
+                            <input type="text" id="patientName" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="dob">Date of Birth</label>
+                            <input type="date" id="dob" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="facility">Select Facility</label>
+                        <select id="facility" required>
+                            <option value="">-- Choose Facility --</option>
+                            <option value="main">Summit Main Hospital (BKC)</option>
+                            <option value="north">Summit Specialist Clinic (Andheri)</option>
+                            <option value="cancer">Powai Cancer Institute</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="specialty">Department / Specialty</label>
+                        <select id="specialty" required>
+                            <option value="">-- Choose Department --</option>
+                            <option value="cardio">Cardiology</option>
+                            <option value="neuro">Neurology</option>
+                            <option value="ortho">Orthopedics</option>
+                            <option value="general">General Internal Medicine</option>
+                            <option value="oncology">Oncology</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="reason">Reason for Visit (Encrypted)</label>
+                        <textarea id="reason" rows="3" required placeholder="Briefly describe your symptoms or reason for visit..."></textarea>
+                    </div>
+
+                    <div class="form-group checkbox-group">
+                        <input type="checkbox" id="hipaaConsent" required>
+                        <label for="hipaaConsent">I acknowledge the <a href="#">Privacy Practices</a> and consent to secure data processing.</label>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary btn-block" id="submitBtn">
+                        <i data-lucide="check-circle"></i> Authenticate & Schedule
+                    </button>
+                    
+                    <div id="formFeedback" class="form-feedback hidden"></div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Massive Footer -->
+    <footer class="main-footer">
+        <div class="container footer-grid">
+            <div class="footer-brand">
+                <div class="logo">
+                    <div class="logo-mark"><i data-lucide="shield-plus"></i></div>
+                    <div class="logo-text">
+                        <h2>Summit Health</h2>
+                    </div>
+                </div>
+                <p>Setting the standard for clinical excellence and enterprise healthcare infrastructure.</p>
+                <div class="social-links mt-4">
+                    <a href="#"><i data-lucide="linkedin"></i></a>
+                    <a href="#"><i data-lucide="twitter"></i></a>
+                    <a href="#"><i data-lucide="facebook"></i></a>
+                </div>
+            </div>
+            
+            <div class="footer-links">
+                <h4>Patient Resources</h4>
+                <a href="#">Patient Portal Login</a>
+                <a href="#">Billing & Insurance</a>
+                <a href="#">Medical Records Request</a>
+                <a href="#">Visitor & Policy Information</a>
+                <a href="#doctors">Find a Doctor</a>
+                <a href="#">Online Pharmacy</a>
+            </div>
+
+            <div class="footer-links">
+                <h4>Medical Professionals</h4>
+                <a href="#">Staff Intranet</a>
+                <a href="#">Careers & Hiring</a>
+                <a href="#">Residency Programs</a>
+                <a href="#research">Clinical Trials Portal</a>
+                <a href="#">Refer a Patient</a>
+            </div>
+
+            <div class="footer-links">
+                <h4>Compliance & Security</h4>
+                <a href="#">Notice of Privacy</a>
+                <a href="#">Data Encryption Standards</a>
+                <a href="#">Terms of Service</a>
+                <a href="#">Accessibility Statement</a>
+                <a href="#">Report a Security Vulnerability</a>
+            </div>
+
+            <div class="footer-contact">
+                <h4>24/7 Support</h4>
+                <p><i data-lucide="phone"></i> +91 22 6600 1122</p>
+                <p><i data-lucide="mail"></i> care@summithealth.in</p>
+                <p><i data-lucide="map-pin"></i> Block G, Bandra Kurla Complex<br>Bandra East, Mumbai 400051</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <p>&copy; 2026 Summit Enterprise Health Network. All rights reserved. Not intended to replace professional medical advice.</p>
+                <div class="footer-badges">
+                    <span class="badge"><i data-lucide="shield"></i> SOC2 Type II</span>
+                    <span class="badge"><i data-lucide="award"></i> NABH Accredited</span>
+                    <span class="badge"><i data-lucide="lock"></i> End-to-End Encrypted</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
